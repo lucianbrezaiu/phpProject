@@ -18,4 +18,6 @@ class UserController extends BaseController
     {
         return $this->view("user/show.html",["name" => "Alex"]);
     }
+
+    //comentariu
 }
