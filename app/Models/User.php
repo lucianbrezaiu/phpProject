@@ -7,8 +7,9 @@
  */
 
 namespace App\Models;
+use User\Model;
 
-class User
+class User extends Model
 {
     private $id;
     private $name;

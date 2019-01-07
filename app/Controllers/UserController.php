@@ -16,8 +16,8 @@ class UserController extends BaseController
 
     public function showAction($id)
     {
-        return $this->view("user/show.html",["name" => "Alex"]);
+        echo "Hai" . $id;
+        //return $this->view("user/show.html",["name" => "Alex"]);
     }
 
-    //comentariu
 }

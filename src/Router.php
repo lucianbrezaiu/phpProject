@@ -23,24 +23,14 @@ class Router
 
     private function isStaticRoute() : bool
     {
-        if(isset($this->routes[$this->requestUrl]))
-        {
-            return true;
-        }
-        return false;
+        return isset($this->routes[$this->requestUrl]);
     }
 
     public function start() : void
     {
         if($this->isStaticRoute())
         {
-            $controller = $this->routes[$this->requestUrl]['controller'];
-            $action = $this->routes[$this->requestUrl]['action'];
-
-            $controller = "\\App\\Controllers\\".$controller;
-
-            $controllerObj = new $controller();
-            $controllerObj->{$action}();
+            $this->callController();
         }
         else if(preg_match('/\d+/',$this->requestUrl, $id))
         {
@@ -52,13 +42,7 @@ class Router
 
             if($this->isStaticRoute())
             {
-                $controller = $this->routes[$this->requestUrl]['controller'];
-                $action = $this->routes[$this->requestUrl]['action'];
-
-                $controller = "\\App\\Controllers\\".$controller;
-
-                $controllerObj = new $controller();
-                $controllerObj->{$action}($id[0]);
+                $this->callController($id[0]);
             }
         }
         else
@@ -77,6 +61,20 @@ class Router
         {
             return "[Router: requestUrl -> $this->requestUrl ]";
         }
+    }
+
+    /**
+     * @param $id
+     */
+    public function callController($id = null): void
+    {
+        $controller = $this->routes[$this->requestUrl]['controller'];
+        $action = $this->routes[$this->requestUrl]['action'];
+
+        $controller = "\\App\\Controllers\\" . $controller;
+
+        $controllerObj = new $controller();
+        $controllerObj->{$action}($id);
     }
 
 }
