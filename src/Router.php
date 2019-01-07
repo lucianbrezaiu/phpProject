@@ -21,6 +21,7 @@ class Router
         $this->routes = $routes;
     }
 
+
     private function isStaticRoute() : bool
     {
         return isset($this->routes[$this->requestUrl]);
@@ -51,6 +52,10 @@ class Router
         }
     }
 
+
+    /**
+     * @return string
+     */
     public function __toString() : string
     {
         if($this->queryString!=null)
@@ -66,7 +71,7 @@ class Router
     /**
      * @param $id
      */
-    public function callController($id = null): void
+    public function callController(int $id = null): void
     {
         $this->checkGuard($this->requestUrl);
 
