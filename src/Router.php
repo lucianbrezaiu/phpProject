@@ -68,6 +68,8 @@ class Router
      */
     public function callController($id = null): void
     {
+        $this->checkGuard($this->requestUrl);
+
         $controller = $this->routes[$this->requestUrl]['controller'];
         $action = $this->routes[$this->requestUrl]['action'];
 
@@ -75,6 +77,14 @@ class Router
 
         $controllerObj = new $controller();
         $controllerObj->{$action}($id);
+    }
+
+    private function checkGuard(string $route): void
+    {
+        if (isset($this->routes[$route][‘guard’])) {
+            $guard = "\\App\\Guards\\" . $this->routes[$route][‘guard’];
+            (new $guard)->handle();
+        }
     }
 
 }
