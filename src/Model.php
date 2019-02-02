@@ -14,8 +14,12 @@ use App\Config;
 
 abstract class Model
 {
+    protected $table;
 
-    public function newDbCon($resultAsArray = false)
+    /**
+     * Functia returneaza o conexiune la baza de date.
+     */
+    protected function newDbCon($resultAsArray = false)
     {
         $dsn = Config::DB['driver'];
         $dsn .= ":host=".Config::DB['host'];
@@ -39,7 +43,7 @@ abstract class Model
     }
 
     /**
-     *Return all data from table
+     * Functia returneaza toate datele din tabela.
      */
     public function getAll(): array
     {
@@ -48,7 +52,7 @@ abstract class Model
         return $stmt->fetchAll();
     }
     /**
-     *Return data with specified id/index
+     * Functia returneaza datele de la un anumit index.
      */
     public function get($id)
     {
@@ -62,7 +66,7 @@ abstract class Model
      * 1. Will extract values from $data
      * 2. Will create the prepared sql string with columns from $data
      */
-    protected function prepareDataSearchForStmt(array $data, bool $like): array
+    protected function prepareDataForSearchStmt(array $data, bool $like): array
     {
         $columns = '';
         $values = [];
@@ -97,6 +101,7 @@ abstract class Model
         $stmt->execute($values);
         return $stmt->fetch();
     }
+
     private function prepareStmt(array $data): array
     {
         $i = 1;
@@ -113,7 +118,7 @@ abstract class Model
         return [$columns, $values];
     }
     /**
-     * Insert new data in table
+     * Functia insereaza un nou rand in tabela.
      */
     public function new(array $data): int
     {
@@ -137,7 +142,7 @@ abstract class Model
         return $stmt->execute($values);
     }
     /**
-     * Delete data from table
+     * Functia sterge datele de la un anumit index.
      */
     public function delete(int $id): bool
     {

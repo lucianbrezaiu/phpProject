@@ -7,30 +7,91 @@
  */
 
 namespace App\Models;
-use User\Model;
+use Framework\Model;
 
 class User extends Model
 {
-    private $id;
-    private $name;
+    protected $table = "User";
 
-    public function __construct($id)
+    private $id;
+    private $username;
+    private $email;
+    private $password;
+
+    public function __construct($id,$username,$email,$password)
     {
         $this->id = $id;
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
     }
 
-    public function getID() : int
+    /**
+     * @return mixed
+     */
+    public function getId() : int
     {
         return $this->id;
     }
 
-    public function getName() : string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        return $this->name;
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername() : string
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail() : string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword() : string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
     }
 
     public function __toString() : string
     {
-        return "[id:" . $this->id . "]";
+        return "[id:" . $this->id . ", ".$this->username.", email: ".$this.$this->email."]";
     }
 }
