@@ -1,0 +1,13 @@
+
+body{
+    background: url(admin.jpg) no-repeat center center fixed;
+}
+
+nav{
+    background: royalblue;
+}
+
+li{
+    margin: 10px;
+}
+

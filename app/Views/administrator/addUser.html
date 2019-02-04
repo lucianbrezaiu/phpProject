@@ -1,0 +1,44 @@
+{% set pageTitle="Adauga cont" %}
+
+
+{% extends "administrator/homeAdmin.html" %}
+
+
+{% block head %}
+    {{parent()}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/administrator2.css">
+{% endblock %}
+
+
+{% block content %}
+    {{parent()}}
+
+    <div class="registerBox">
+        <h1>ADD NEW ACCOUNT!</h1>
+        <form action="/administrator/register" method="post">
+            <p>FIRST NAME:</p>
+            <input type="text" name="firstName" placeholder="First name" required>
+            <p>LAST NAME:</p>
+            <input type="text" name="lastName" placeholder="Last name" required>
+            <p>EMAIL:</p>
+            <input type="text" name="email" placeholder="Email" required>
+            <p>USERNAME:</p>
+            <input type="text" name="userName" placeholder="Username" required>
+            <p>PASSWORD:</p>
+            <input type="password" name="password" placeholder="Password" minlength="6" required>
+            <p>FUNCTION:</p>
+            <select name="function">
+                <option value="employee">Employee</option>
+                <option value="administrator">Administrator</option>
+            </select>
+            <br><br><br>
+            <input type="submit" name="" value="ADD">
+        </form>
+    </div>
+
+{% endblock %}
+
+
+

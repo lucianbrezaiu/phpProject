@@ -15,7 +15,7 @@ class PageController extends BaseController
     public function loadLoginPage()
     {
         session_start();
-        $this->view("loginPage.html");
+        $this->view("home.html");
         if(isset($_SESSION["message"]))
         {
             $this->alert( $_SESSION["message"]);
@@ -28,7 +28,7 @@ class PageController extends BaseController
     {
         if(isset($_SESSION["FirstName"]) && isset($_SESSION["LastName"]))
         {
-            $this->view("administrator/home.html",["admin" => $_SESSION["FirstName"]." ".$_SESSION["LastName"]]);
+            $this->view("administrator/homeAdmin.html",["admin" => $_SESSION["FirstName"]." ".$_SESSION["LastName"]]);
             if(isset($_SESSION["message"]))
             {
                 $this->alert( $_SESSION["message"]);
@@ -39,7 +39,7 @@ class PageController extends BaseController
 
     public function loadAddAccountPage()
     {
-        $this->view("administrator/addAccount.html");
+        $this->view("administrator/addUser.html");
     }
 
     public function loadEmployeePage()
