@@ -12,14 +12,20 @@ use Framework\Guard;
 
 class Authenticated implements Guard
 {
-    public function handle(array $params = null)
+    public function handle(array $params = null) : bool
     {
         session_start();
-        if (!isset($_SESSION['username']))
+        if (!isset($_SESSION['Email']))
+        {
+            $_SESSION["message"] = "Denied access!";
             $this->reject();
+            return false;
+        }
+        return true;
     }
+
     public function reject()
     {
-        header("Location: /auth/login");
+        header("Location: /");
     }
 }

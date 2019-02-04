@@ -21,7 +21,6 @@ class Router
         $this->routes = $routes;
     }
 
-
     private function isStaticRoute() : bool
     {
         return isset($this->routes[$this->requestUrl]);
@@ -52,22 +51,6 @@ class Router
         }
     }
 
-
-    /**
-     * @return string
-     */
-    public function __toString() : string
-    {
-        if($this->queryString!=null)
-        {
-            return "[Router: requestUrl -> $this->requestUrl, queryString -> $this->queryString]";
-        }
-        else
-        {
-            return "[Router: requestUrl -> $this->requestUrl ]";
-        }
-    }
-
     /**
      * @param $id
      */
@@ -86,8 +69,8 @@ class Router
 
     private function checkGuard(string $route): void
     {
-        if (isset($this->routes[$route][‘guard’])) {
-            $guard = "\\App\\Guards\\" . $this->routes[$route][‘guard’];
+        if (isset($this->routes[$route]["guard"])) {
+            $guard = "\\App\\Guards\\" . $this->routes[$route]["guard"];
             (new $guard)->handle();
         }
     }

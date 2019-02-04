@@ -7,6 +7,9 @@
   },
   "require": {
     "twig/twig": "^2.0",
-    "tracy/tracy": "^2.5"
+    "tracy/tracy": "^2.5",
+    "symfony/asset": "^4.2",
+    "symfony/assetic-bundle": "^2.8",
+    "symfony/twig-bridge": "^4.2"
   }
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME | SIEMENS</title>
+</head>
+<body>
+
+    <div class="loginBox">
+        <h1>Welcome back!</h1>
+        <form action="/login" method="post">
+            <p>Email:</p>
+            <input type="text" name="email" placeholder="Enter email" required>
+
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="Enter password" minlength="6" required>
+            <input type="submit" name="" value="Login">
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+<style>
+    body{
+        background-color: #ffc107;
+    }
+
+    .loginBox{
+        width: 320px;
+        height: 420px;
+        background: #000;
+        color:;
+        top:50%;
+        left:50%;
+        position:absolute;
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+
+    h1{
+        margin: 0;
+        padding: 0 0 15px;
+        text-align: center;
+        font-size: 22px;
+        color: white;
+    }
+
+    .loginBox p{
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-family: "Comic Sans MS";
+        color: white;
+    }
+
+    .loginBox input{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .loginBox input[type="text"], input[type="password"]{
+        border:none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+
+    }
+
+    .loginBox input[type="submit"]{
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+
+    .loginBox input[type="submit"]:hover{
+        cursor:pointer;
+        background: #ffc107;
+        color: #000;
+    }
+
+</style>

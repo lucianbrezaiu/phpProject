@@ -16,15 +16,18 @@ class BaseController
     {
         $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../app/Views');
         $this->twig = new \Twig_Environment($loader, array(
-            'cache' => __DIR__ . '/../storage/cache/views',
+//            'cache' => __DIR__ . '/../storage/cache/views',
         ));
+
     }
 
     public function view(string $viewFile, array $params=[])
     {
-
         echo $this->twig->render($viewFile,$params);
+    }
 
+    function alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
 }

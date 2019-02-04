@@ -15,7 +15,7 @@ class Config
     const DB = [
         'driver'  => 'mysql',
         'host'    => 'localhost',
-        'dbname'  => 'companydb',
+        'dbname'  => 'firmaDB',
         'port'    => '3306',
         'charset' => 'utf8mb4',
         'user'    => 'root',
