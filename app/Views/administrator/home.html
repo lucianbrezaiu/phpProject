@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% block head%}
+        <meta charset="UTF-8">
+        <title> {%block title %}{%endblock%} ADMINISTRATOR | SIEMENS</title>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" >
+        <link href="css/admin.css" type="text/css" rel="stylesheet">
+    {% endblock%}
+</head>
+<body>
+
+    <nav class="navbar navbar-custom navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn btn-light" href="/administrator/addAccount">ADD ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-light" href="/administrator/logout">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content">{% block content %}{% endblock %}</div>
+    <!--<p1>Hello {{admin}}!</p1>-->
+
+</body>
+</html>

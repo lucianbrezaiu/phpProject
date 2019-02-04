@@ -25,8 +25,56 @@ class BaseController
         echo $this->twig->render($viewFile,$params);
     }
 
-    function alert($msg) {
+    public function alert($msg) {
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
+
+    protected function validForm($email,$password) : bool
+    {
+        if(!$this->validEmail($email))
+        {
+            return false;
+        }
+
+        if(!$this->validPassword($password))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    protected function validEmail($email) : bool
+    {
+        if($email == null)
+        {
+            return false;
+        }
+
+        if(filter_var($email,FILTER_VALIDATE_EMAIL)==false)
+        {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    protected function validPassword($password) : bool
+    {
+        if($password == null)
+        {
+            return false;
+        }
+
+        if(strlen($password)<6)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+
 
 }

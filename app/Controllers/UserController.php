@@ -42,6 +42,7 @@ class UserController extends BaseController
                    $_SESSION["FirstName"] = $result->FirstName;
                    $_SESSION["LastName"] = $result->LastName;
                    $_SESSION["Email"] = $result->Email;
+                   unset( $_SESSION["message"]);
                    switch ($result->Function)
                    {
                        case "administrator":
@@ -54,85 +55,6 @@ class UserController extends BaseController
                }
            }
        }
-
-       public function registerUser()
-       {
-           if(!$this->validForm($_POST["email"],$_POST["password"]))
-           {
-               $_SESSION["message"] = "Email sau parola invalida!";
-           }
-           else
-               {
-               $user = new User();
-               $user->setFirstName($_POST["firstName"]);
-               $user->setLastName($_POST["lastName"]);
-               $user->setUserName($_POST["userName"]);
-               $user->setEmail($_POST["email"]);
-               $hashedPassword = password_hash($_POST["password"],PASSWORD_DEFAULT);
-               $user->setPassword($hashedPassword);
-               $user->setFunction($_POST["function"]);
-
-               $result = $user->find(["Email" => $user->getEmail()]);
-               if (is_object($result))
-               {
-                   $_SESSION["message"] = "Adresa de email deja exista!";
-               }
-               else
-               {
-                   $_SESSION["message"] = "Operatie incheiata cu succes!";
-                   $user->new($user->wrap());
-               }
-           }
-           header("Location: /administrator");
-
-       }
-
-        private function validForm($email,$password) : bool
-        {
-            if(!$this->validEmail($email))
-            {
-                return false;
-            }
-
-            if(!$this->validPassword($password))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        private function validEmail($email) : bool
-        {
-            if($email == null)
-            {
-                return false;
-            }
-
-            if(filter_var($email,FILTER_VALIDATE_EMAIL)==false)
-            {
-                return false;
-            }
-
-            return true;
-
-        }
-
-        private function validPassword($password) : bool
-        {
-            if($password == null)
-            {
-                return false;
-            }
-
-            if(strlen($password)<6)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
 
 //    public function showAction($id)
 //    {

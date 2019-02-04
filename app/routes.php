@@ -10,16 +10,19 @@ $routes = [
 
   "/" => ["controller" => "PageController", "action" => "loadLoginPage"],
 
-  "/login" => ["controller" => "UserController", "action" => "loginUser", "guard" => "Authenticated"],
+  "/login" => ["controller" => "UserController", "action" => "loginUser", "guard" => "Authenticated"], //nu are pagina
+
 
   "/administrator" => ["controller" => "PageController", "action" => "loadAdminPage", "guard" => "Authenticated"],
 
   "/employee" => ["controller" => "PageController", "action" => "loadEmployeePage", "guard" => "Authenticated"],
 
-  "/administrator/registerUser" => ["controller" => "UserController", "action" => "registerUser", "guard" => "Authenticated"],
 
-   "/administrator/logout" => ["controller" => "AdminController", "action" => "logoutAdmin"],
+  "/administrator/addAccount" => ["controller" => "PageController", "action" => "loadAddAccountPage", "guard" => "Authenticated"],
 
+  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"], // nu are pagina
+
+  "/administrator/logout" => ["controller" => "AdminController", "action" => "logout"],
 
 
 
