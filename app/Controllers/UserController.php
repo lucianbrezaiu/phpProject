@@ -59,7 +59,7 @@ class UserController extends BaseController
        {
            if(!$this->validForm($_POST["email"],$_POST["password"]))
            {
-               $this->alert("Email sau parola invalida!");
+               $_SESSION["message"] = "Email sau parola invalida!";
            }
            else
                {
@@ -73,16 +73,18 @@ class UserController extends BaseController
                $user->setFunction($_POST["function"]);
 
                $result = $user->find(["Email" => $user->getEmail()]);
-               if ($result === true)
+               if (is_object($result))
                {
                    $_SESSION["message"] = "Adresa de email deja exista!";
                }
                else
                {
+                   $_SESSION["message"] = "Operatie incheiata cu succes!";
                    $user->new($user->wrap());
-                   header("Location: /administrator");
                }
            }
+           header("Location: /administrator");
+
        }
 
         private function validForm($email,$password) : bool

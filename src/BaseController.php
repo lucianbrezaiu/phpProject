@@ -18,7 +18,6 @@ class BaseController
         $this->twig = new \Twig_Environment($loader, array(
 //            'cache' => __DIR__ . '/../storage/cache/views',
         ));
-
     }
 
     public function view(string $viewFile, array $params=[])

@@ -29,6 +29,13 @@ class PageController extends BaseController
         if(isset($_SESSION["FirstName"]) && isset($_SESSION["LastName"]))
         {
             $this->view("adminPage.html",["admin" => $_SESSION["FirstName"]." ".$_SESSION["LastName"]]);
+            if(isset($_SESSION["message"]))
+            {
+                $this->alert( $_SESSION["message"]);
+                unset( $_SESSION["message"]);
+            }
+
+
         }
 
     }
