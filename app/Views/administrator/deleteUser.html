@@ -1,0 +1,69 @@
+{% set pageTitle="Remove" %}
+
+
+{% extends "administrator/homeAdmin.html" %}
+
+
+{% block head %}
+    {{parent()}}
+    <link rel="stylesheet" href="css/administrator3.css">
+{% endblock %}
+
+{% block content %}
+
+{{parent()}}
+
+    <div class="users">
+        <table class="UserTable">
+            <tr>
+                <th class="cell">  ID  </th>
+                <th class="cell">  First name  </th>
+                <th class="cell">  Last name  </th>
+                <th class="cell">  Username  </th>
+                <th class="cell">  Email  </th>
+                <th class="cell">  Function  </th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.ID}}</td>
+                <td>{{user.FirstName}}</td>
+                <td>{{user.LastName}}</td>
+                <td>{{user.Username}}</td>
+                <td>{{user.Email}}</td>
+                <td>{{user.Function}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+
+<style>
+    table,th,td{
+        border: 1px solid black;
+    }
+
+    tr{
+        cursor: pointer
+    }
+    th {
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #fff !important;
+        cursor: default;
+    }
+    td, th {padding: 5px;
+        border:  1px solid black;
+        white-space: nowrap;
+        vertical-align: text-top;
+        overflow-x: auto;
+        max-width: 250px;
+        max-height: 25px;
+    }
+
+
+
+</style>
+{% endblock %}
+

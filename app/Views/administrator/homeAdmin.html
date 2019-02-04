@@ -6,8 +6,6 @@
 
 {% block head %}
     {{parent()}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" >
     <link rel="stylesheet" href="css/administrator.css">
 {% endblock %}
 
@@ -22,6 +20,9 @@
                 </li>
                 <li>
                     <a class="nav-link btn btn-light" href="/administrator/addAccount">ADD ACCOUNT</a>
+                </li>
+                <li>
+                    <a class="nav-link btn btn-light" href="/administrator/deleteAccount">DELETE ACCOUNT</a>
                 </li>
                 <li>
                     <a class="nav-link btn btn-light" href="/administrator/logout">LOG OUT</a>

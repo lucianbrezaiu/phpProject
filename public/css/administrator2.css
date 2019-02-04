@@ -1,16 +1,3 @@
-body{
-    background: url(admin.jpg) no-repeat center center fixed;
-}
-
-nav{
-    background: royalblue;
-}
-
-li{
-    margin: 10px;
-}
-
-
 .registerBox{
     width: 400px;
     height: 615px;

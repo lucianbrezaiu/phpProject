@@ -20,6 +20,8 @@ $routes = [
 
   "/administrator/addAccount" => ["controller" => "PageController", "action" => "loadAddAccountPage", "guard" => "Authenticated"],
 
+  "/administrator/deleteAccount" => ["controller" => "PageController", "action" => "loadDeleteAccountPage"],
+
   "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"], // nu are pagina
 
   "/administrator/logout" => ["controller" => "AdminController", "action" => "logout"],

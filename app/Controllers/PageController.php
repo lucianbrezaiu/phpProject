@@ -8,6 +8,7 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
 use Framework\BaseController;
 
 class PageController extends BaseController
@@ -40,6 +41,13 @@ class PageController extends BaseController
     public function loadAddAccountPage()
     {
         $this->view("administrator/addUser.html");
+    }
+
+    public function loadDeleteAccountPage()
+    {
+        $user = new User();
+        $result = $user->getAll();
+        $this->view("administrator/deleteUser.html",["users" => $result]);
     }
 
     public function loadEmployeePage()
