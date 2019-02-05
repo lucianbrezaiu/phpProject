@@ -78,7 +78,8 @@ class AdminController extends BaseController
 
         if(!$this->valid($criterion,$field))
         {
-            $_SESSION["message"] = "Camp invalid!";
+
+            $_SESSION["message"] = "Email sau parola invalida!";
             header("Location: /administrator/deleteAccount");
             return;
         }
@@ -104,7 +105,4 @@ class AdminController extends BaseController
         $user->delete($result->ID);
         header("Location: /administrator/deleteAccount");
     }
-
-
-
 }

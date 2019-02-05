@@ -13,15 +13,16 @@ use Framework\BaseController;
 
 class PageController extends BaseController
 {
+
     public function loadHomepage() : void
     {
-        $this->view("home/home.html");
+        $this->view("root/home.html");
     }
 
     public function loadLoginPage() : void
     {
         session_start();
-        $this->view("home/login.html");
+        $this->view("root/login.html");
         if(isset($_SESSION["message"]))
         {
             $this->alert( $_SESSION["message"]);
@@ -65,6 +66,7 @@ class PageController extends BaseController
         }
     }
 
+
     public function loadEmployeePage() : void
     {
         $this->view("employeePage.html");
@@ -75,7 +77,6 @@ class PageController extends BaseController
      */
     public function redirect()
     {
-        header("Location: /");
         header("Location: https://new.siemens.com/ro/ro.html");
     }
 }

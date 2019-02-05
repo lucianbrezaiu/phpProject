@@ -16,21 +16,19 @@ $routes = [
 
   "/authenticate" => ["controller" => "UserController", "action" => "loginUser", "guard" => "Authenticated"],
 
-
-
   "/administrator" => ["controller" => "PageController", "action" => "loadAdminPage", "guard" => "Authenticated"],
 
   "/employee" => ["controller" => "PageController", "action" => "loadEmployeePage", "guard" => "Authenticated"],
 
   "/administrator/addAccount" => ["controller" => "PageController", "action" => "loadAddAccountPage", "guard" => "Authenticated"],
 
-  "/administrator/deleteAccount" => ["controller" => "PageController", "action" => "loadDeleteAccountPage"],
+  "/administrator/deleteAccount" => ["controller" => "PageController", "action" => "loadDeleteAccountPage", "guard" => "Authenticated"],
 
-  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"],
+  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated", "guard" => "Authenticated"],
 
-  "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated"],
+  "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated", "guard" => "Authenticated"],
 
-  "/administrator/logout" => ["controller" => "AdminController", "action" => "logout"],
+  "/administrator/logout" => ["controller" => "AdminController", "action" => "logout", "guard" => "Authenticated"],
 
 
 
