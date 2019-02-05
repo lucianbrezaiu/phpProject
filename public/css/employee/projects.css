@@ -1,3 +1,16 @@
 .p1{
     color: #000000;
 }
+
+.box{
+    width: 600px;
+    height: 615px;
+    background: white;
+    color: black;
+    top:55%;
+    left:30%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 25px;
+}

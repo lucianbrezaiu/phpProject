@@ -21,24 +21,7 @@ class User extends Model
     private $function;
 
     /**
-     * Functia returneaza un array asociativ cu coloanele si valorile unui user.
-     */
-    public function wrap()
-    {
-        $array = [
-            "FirstName" => $this->firstName,
-            "LastName" => $this->lastName,
-            "Username" => $this->username,
-            "Email" => $this->email,
-            "Password" => $this->password,
-            "Function" => $this->function
-
-        ];
-        return $array;
-    }
-
-    /**
-     * @param mixed $firstName
+     * Functia seteaza valoarea lui $firstName.
      */
     public function setFirstName($firstName): void
     {
@@ -46,7 +29,7 @@ class User extends Model
     }
 
     /**
-     * @param mixed $lastName
+     * Functia seteaza valoarea lui $lastName.
      */
     public function setLastName($lastName): void
     {
@@ -54,7 +37,7 @@ class User extends Model
     }
 
     /**
-     * @param mixed $username
+     * Functia seteaza valoarea lui $username.
      */
     public function setUsername($username): void
     {
@@ -62,7 +45,7 @@ class User extends Model
     }
 
     /**
-     * @param mixed $email
+     * Functia seteaza valoarea lui $email.
      */
     public function setEmail($email): void
     {
@@ -70,7 +53,7 @@ class User extends Model
     }
 
     /**
-     * @param mixed $password
+     * Functia seteaza valoarea lui $password.
      */
     public function setPassword($password): void
     {
@@ -78,7 +61,7 @@ class User extends Model
     }
 
     /**
-     * @param mixed $function
+     * Functia seteaza valoarea lui $function.
      */
     public function setFunction($function): void
     {
@@ -86,49 +69,49 @@ class User extends Model
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $firstName.
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $lastName.
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->lastName;
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $username.
      */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $email.
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $password.
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $function.
      */
-    public function getFunction()
+    public function getFunction() : string
     {
         return $this->function;
     }

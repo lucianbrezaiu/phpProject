@@ -20,15 +20,15 @@ class Project extends Model
     private $employee;
 
     /**
-     *
+     * Functia returneaza valoarea lui $name.
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
     /**
-     * @param mixed $name
+     * Functia seteaza valoarea lui $name.
      */
     public function setName($name): void
     {
@@ -36,15 +36,15 @@ class Project extends Model
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $startDate.
      */
-    public function getStartDate()
+    public function getStartDate() : string
     {
         return $this->startDate;
     }
 
     /**
-     * @param mixed $startDate
+     * Functia seteaza valoarea lui $startDate.
      */
     public function setStartDate($startDate): void
     {
@@ -52,15 +52,15 @@ class Project extends Model
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $endDate.
      */
-    public function getEndDate()
+    public function getEndDate() : string
     {
         return $this->endDate;
     }
 
     /**
-     * @param mixed $endDate
+     * Functia seteaza valoarea lui $startDate.
      */
     public function setEndDate($endDate): void
     {
@@ -68,15 +68,15 @@ class Project extends Model
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $budget.
      */
-    public function getBudget()
+    public function getBudget() : double
     {
         return $this->budget;
     }
 
     /**
-     * @param mixed $budget
+     * Functia seteaza valoarea lui $budget.
      */
     public function setBudget($budget): void
     {
@@ -84,15 +84,15 @@ class Project extends Model
     }
 
     /**
-     * @return mixed
+     * Functia returneaza valoarea lui $employee.
      */
-    public function getEmployee()
+    public function getEmployee() : int
     {
         return $this->employee;
     }
 
     /**
-     * @param mixed $employee
+     * Functia seteaza valoarea lui $employee.
      */
     public function setEmployee($employee): void
     {

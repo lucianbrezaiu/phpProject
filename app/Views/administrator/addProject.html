@@ -1,0 +1,61 @@
+{% set pageTitle="Add project" %}
+
+
+{% extends "administrator/homeAdmin.html" %}
+
+
+{% block head %}
+    {{parent()}}
+    <link rel="stylesheet" type="text/css" href="/css/administrator//addProject.css">
+{% endblock %}
+
+
+{% block content %}
+{{parent()}}
+
+    <div class="box">
+        <form action="/administrator/addProject" method="post">
+            <p>NAME:</p>
+            <input type="text" name="name" placeholder="name" required>
+            <p>Start date:</p>
+            <input type="date" name="startDate" required>
+            <p>End date:</p>
+            <input type="date" name="endDate" required>
+            <p>Budget:</p>
+            <input type="text" name="budget" placeholder="budget" required>
+            <p>ID employee:</p>
+            <input type="text" name="employee" placeholder="employee" required>
+            <br><br>
+            <input type="submit" name="" value="ADD">
+        </form>
+    </div>
+
+    <div class="users">
+        <table class="table table-striped">
+            <tr>
+                <th class="cell">  ID  </th>
+                <th class="cell">  First name  </th>
+                <th class="cell">  Last name  </th>
+                <th class="cell">  Username  </th>
+                <th class="cell">  Email  </th>
+                <th class="cell">  Function  </th>
+            </tr>
+            {% for user in users %}
+                {% if user.Function is same as("employee")%}
+                    <tr>
+                        <td>{{user.ID}}</td>
+                        <td>{{user.FirstName}}</td>
+                        <td>{{user.LastName}}</td>
+                        <td>{{user.Username}}</td>
+                        <td>{{user.Email}}</td>
+                        <td>{{user.Function}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+
+
+

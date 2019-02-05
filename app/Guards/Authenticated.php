@@ -12,19 +12,24 @@ use Framework\Guard;
 
 class Authenticated implements Guard
 {
-    public function handle(array $params = null) : bool
+    /**
+     * Functia verifica daca o anumita ruta este accesibila pentru un utilizator.
+     */
+    public function handle(array $params = null): bool
     {
         session_start();
-        if (!isset($_SESSION['Email']))
-        {
-            $_SESSION["message"] = "Denied access!";
+        if (!isset($_SESSION['Email'])) {
+            $_SESSION["message"] = "ACCESS DENIED!";
             $this->reject();
             return false;
         }
         return true;
     }
 
-    public function reject()
+    /**
+     * Functia face redirectare catre pagina de home daca ruta nu este accesibila.
+     */
+    public function reject(): void
     {
         header("Location: /");
     }

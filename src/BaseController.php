@@ -20,23 +20,28 @@ class BaseController
         ));
     }
 
-    public function view(string $viewFile, array $params=[])
+    /**
+     * Functia incarca o pagina cu numele $viewFile;
+     */
+    public function view(string $viewFile, array $params=[]) : void
     {
         echo $this->twig->render($viewFile,$params);
     }
 
-    public function alert($msg) {
+    /**
+     * Functia afiseaza un mesaj.
+     */
+    public function alert($msg) : void
+    {
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
+    /**
+     * Functia verifica corectitudinea datelor unui formular.
+     */
     protected function validForm($email,$password) : bool
     {
-        if(!$this->validEmail($email))
-        {
-            return false;
-        }
-
-        if(!$this->validPassword($password))
+        if(!$this->validEmail($email) || !$this->validPassword($password))
         {
             return false;
         }
@@ -44,14 +49,12 @@ class BaseController
         return true;
     }
 
+    /**
+     * Functia valideaza campul de email.
+     */
     protected function validEmail($email) : bool
     {
-        if($email == null)
-        {
-            return false;
-        }
-
-        if(filter_var($email,FILTER_VALIDATE_EMAIL)==false)
+        if(!$email || !filter_var($email,FILTER_VALIDATE_EMAIL))
         {
             return false;
         }
@@ -60,14 +63,12 @@ class BaseController
 
     }
 
+    /**
+     * Functia valideaza campul de parola.
+     */
     protected function validPassword($password) : bool
     {
-        if($password == null)
-        {
-            return false;
-        }
-
-        if(strlen($password)<6)
+        if(!$password || strlen($password)<6)
         {
             return false;
         }

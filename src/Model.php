@@ -117,8 +117,9 @@ abstract class Model
         }
         return [$columns, $values];
     }
+
     /**
-     * Functia insereaza un nou rand in tabela, si verifica ca mailul sa fie unic
+     * Functia insereaza un nou rand in tabela.
      */
     public function new(array $data): int
     {

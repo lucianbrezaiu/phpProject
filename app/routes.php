@@ -28,6 +28,10 @@ $routes = [
 
   "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated"],
 
+  "/administrator/project" => ["controller" => "PageController", "action" => "loadAddProjectPage", "guard" => "Authenticated"],
+
+  "/administrator/addProject" => ["controller" => "AdminController", "action" => "addProject", "guard" => "Authenticated"],
+
   "/logout" => ["controller" => "UserController", "action" => "logout", "guard" => "Authenticated"],
 
   "/employee/personalData" => ["controller" => "PageController", "action" => "loadPersonalPage", "guard" => "Authenticated"],
@@ -35,8 +39,8 @@ $routes = [
   "/employee/projects" => ["controller" => "PageController", "action" => "loadProjectsPage", "guard" => "Authenticated"],
     
 
-//  "/user/{id}" => ["controller" => "UserController", "action" => "showAction"] ,
+//    posibilitatea de rute dinamice:
 //
-//  "/user/edit/{id}" => ['controller' => 'UserController', 'action' => 'showAction', 'guard' => 'Authenticated'] ,
+//  "/user/{id}" => ["controller" => "UserController", "action" => "showAction"] ,
 
 ];

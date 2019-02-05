@@ -1,0 +1,55 @@
+.box{
+    width: 400px;
+    height: 615px;
+    background: deepskyblue;
+    color: black;
+    top:55%;
+    left:17%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 25px;
+}
+
+.box p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: black;
+    font-weight: bold;
+}
+.box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.box input[type="text"], input[type="submit"]{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: white;
+    outline: none;
+    height: 38px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Times New Roman";
+}
+
+.box input[type="submit"]:hover{
+    cursor:pointer;
+    background: blue;
+    color: white;
+}
+
+.users{
+    width: 600px;
+    height: 615px;
+    background: white;
+    color: black;
+    top:55%;
+    left:60%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 25px;
+}

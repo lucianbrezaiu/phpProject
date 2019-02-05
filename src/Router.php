@@ -21,11 +21,17 @@ class Router
         $this->routes = $routes;
     }
 
+    /**
+     * Functia verifica daca o ruta este statica.
+     */
     private function isStaticRoute() : bool
     {
         return isset($this->routes[$this->requestUrl]);
     }
 
+    /**
+     * Functia verifica ruta curent in scopul redirectarii.
+     */
     public function start() : void
     {
         if($this->isStaticRoute())
@@ -47,12 +53,12 @@ class Router
         }
         else
         {
-            echo '<br>Route does not exist!';
+            echo '<br>ERROR 404!';
         }
     }
 
     /**
-     * @param $id
+     * Functia apeleaza actiunea unui controller, actiune specifica unei rute.
      */
     public function callController(int $id = null): void
     {
@@ -67,6 +73,9 @@ class Router
         $controllerObj->{$action}($id);
     }
 
+    /**
+     * Functia verifica daca ruta este securizata de o clasa Guard.
+     */
     private function checkGuard(string $route): void
     {
         if (isset($this->routes[$route]["guard"])) {

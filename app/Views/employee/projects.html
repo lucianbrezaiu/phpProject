@@ -12,6 +12,26 @@
 {% block content %}
 
     {{parent()}}
-    //trebuie sa afisez proiectele primite
+    <div class="box">
+        <table class="table table-striped">
+            <tr>
+                <th class="cell">  ID  </th>
+                <th class="cell">  Name  </th>
+                <th class="cell">  Start Date  </th>
+                <th class="cell">  End Date  </th>
+                <th class="cell">  Budget  </th>
+            </tr>
+            {% for project in projects %}
+                {% if project.Employee is same as(currentID)%}
+                    <tr>
+                        <td>{{project.ID}}</td>
+                        <td>{{project.Name}}</td>
+                        <td>{{project.StartDate}}</td>
+                        <td>{{project.EndDate}}</td>
+                        <td>{{project.Budget}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
 
 {% endblock %}
