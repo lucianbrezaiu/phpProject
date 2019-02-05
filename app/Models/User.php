@@ -11,7 +11,7 @@ use Framework\Model;
 
 class User extends Model
 {
-    protected $table = "User";
+    protected $table = "user";
 
     private $firstName;
     private $lastName;
@@ -134,9 +134,4 @@ class User extends Model
     }
 
 
-
-    public function __toString() : string
-    {
-        return "[id:" . $this->id . ", ".$this->username.", email: ".$this.$this->email."]";
-    }
 }

@@ -13,14 +13,7 @@ use App\Models\User;
 
 class AdminController extends BaseController
 {
-    /**
-     * Functia distruge sesiunea curenta si incarca pagina principala.
-     */
-    public function logout() : void
-    {
-        session_destroy();
-        header("Location: /");
-    }
+
 
     /**
      * Functia insereaza un nou cont de utilizator in aplicatie.

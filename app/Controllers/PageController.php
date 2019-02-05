@@ -11,6 +11,7 @@ namespace App\Controllers;
 use App\Models\User;
 use Framework\BaseController;
 
+
 class PageController extends BaseController
 {
 
@@ -69,7 +70,7 @@ class PageController extends BaseController
 
     public function loadEmployeePage() : void
     {
-        $this->view("employeePage.html");
+        $this->view("employee/homeEmployee.html");
     }
 
     /**
@@ -78,5 +79,18 @@ class PageController extends BaseController
     public function redirect()
     {
         header("Location: https://new.siemens.com/ro/ro.html");
+    }
+
+    public function loadPersonalPage()
+    {
+        $user = new User();
+        $result = $user->find(["ID" => $_SESSION["ID"]]);
+        $this->view("employee/personalData.html",["user" => $result]);
+    }
+
+    public function loadProjectsPage()
+    {
+        // trebuie sa trimit proiectele userului curent
+        $this->view("employee/projects.html");
     }
 }

@@ -24,19 +24,19 @@ $routes = [
 
   "/administrator/deleteAccount" => ["controller" => "PageController", "action" => "loadDeleteAccountPage", "guard" => "Authenticated"],
 
-  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated", "guard" => "Authenticated"],
+  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"],
 
-  "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated", "guard" => "Authenticated"],
+  "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated"],
 
-  "/administrator/logout" => ["controller" => "AdminController", "action" => "logout", "guard" => "Authenticated"],
+  "/logout" => ["controller" => "UserController", "action" => "logout", "guard" => "Authenticated"],
 
+  "/employee/personalData" => ["controller" => "PageController", "action" => "loadPersonalPage", "guard" => "Authenticated"],
 
+  "/employee/projects" => ["controller" => "PageController", "action" => "loadProjectsPage", "guard" => "Authenticated"],
+    
 
-
-  "/page/about-us" => ["controller" => "PageController", "action" => "aboutUsAction"]  ,
-
-  "/user/{id}" => ["controller" => "UserController", "action" => "showAction"] ,
-
-  "/user/edit/{id}" => ['controller' => 'UserController', 'action' => 'showAction', 'guard' => 'Authenticated'] ,
+//  "/user/{id}" => ["controller" => "UserController", "action" => "showAction"] ,
+//
+//  "/user/edit/{id}" => ['controller' => 'UserController', 'action' => 'showAction', 'guard' => 'Authenticated'] ,
 
 ];

@@ -57,6 +57,16 @@ class UserController extends BaseController
            }
        }
 
+
+    /**
+     * Functia distruge sesiunea curenta si incarca pagina principala.
+     */
+    public function logout() : void
+    {
+        session_destroy();
+        header("Location: /");
+    }
+
 //    public function showAction($id)
 //    {
 //        echo "Hai" . $id;

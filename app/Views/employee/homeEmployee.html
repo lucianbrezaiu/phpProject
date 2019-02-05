@@ -1,4 +1,4 @@
-{% set pageTitle="Administrator" %}
+{% set pageTitle="Employee" %}
 
 
 {% extends "layout.html" %}
@@ -6,8 +6,7 @@
 
 {% block head %}
     {{parent()}}
-
-    <link rel="stylesheet" type="text/css" href="/css/administrator/homeAdmin.css">
+    <link rel="stylesheet" type="text/css" href="/css/employee/homeEmployee.css">
 {% endblock %}
 
 {% block content %}
@@ -16,13 +15,13 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link btn btn-light" href="/administrator">HOME</a>
+                    <a class="nav-link btn btn-light" href="/employee">HOME</a>
                 </li>
                 <li>
-                    <a class="nav-link btn btn-light" href="/administrator/addAccount">ADD ACCOUNT</a>
+                    <a class="nav-link btn btn-light" href="/employee/personalData">PERSONAL DATA</a>
                 </li>
                 <li>
-                    <a class="nav-link btn btn-light" href="/administrator/deleteAccount">DELETE ACCOUNT</a>
+                    <a class="nav-link btn btn-light" href="/employee/projects">PROJECTS</a>
                 </li>
                 <li>
                     <a class="nav-link btn btn-light" href="/logout">LOG OUT</a>
