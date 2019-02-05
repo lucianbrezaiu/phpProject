@@ -8,21 +8,27 @@
 
 $routes = [
 
-  "/" => ["controller" => "PageController", "action" => "loadLoginPage"],
+  "/" => ["controller" => "PageController", "action" => "loadHomePage"],
 
-  "/login" => ["controller" => "UserController", "action" => "loginUser", "guard" => "Authenticated"], //nu are pagina
+  "/login" => ["controller" => "PageController", "action" => "loadLoginPage"],
+
+  "/redirect" => ["controller" => "PageController", "action" => "redirect"],
+
+  "/authenticate" => ["controller" => "UserController", "action" => "loginUser", "guard" => "Authenticated"],
+
 
 
   "/administrator" => ["controller" => "PageController", "action" => "loadAdminPage", "guard" => "Authenticated"],
 
   "/employee" => ["controller" => "PageController", "action" => "loadEmployeePage", "guard" => "Authenticated"],
 
-
   "/administrator/addAccount" => ["controller" => "PageController", "action" => "loadAddAccountPage", "guard" => "Authenticated"],
 
   "/administrator/deleteAccount" => ["controller" => "PageController", "action" => "loadDeleteAccountPage"],
 
-  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"], // nu are pagina
+  "/administrator/register" => ["controller" => "AdminController", "action" => "register", "guard" => "Authenticated"],
+
+  "/administrator/remove" => ["controller" => "AdminController", "action" => "remove", "guard" => "Authenticated"],
 
   "/administrator/logout" => ["controller" => "AdminController", "action" => "logout"],
 

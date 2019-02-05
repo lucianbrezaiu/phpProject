@@ -1,0 +1,28 @@
+{% set pageTitle="SIEMENS" %}
+
+{% extends "layout.html" %}
+
+{% block head %}
+    {{parent()}}
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+{% endblock %}
+
+{% block content %}
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a class="nav-link btn btn-light" href="/">HOME</a>
+                </li>
+                <li>
+                    <a class="nav-link btn btn-light" href="/login">LOGIN</a>
+                </li>
+                <li>
+                    <a class="nav-link btn btn-light" href="/redirect">OFFICIAL SITE</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}

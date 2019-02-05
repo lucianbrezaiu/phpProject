@@ -6,15 +6,15 @@
 
 {% block head %}
     {{parent()}}
-    <link rel="stylesheet" href="css/administrator3.css">
+    <link rel="stylesheet" type="text/css" href="/css/administrator3.css" >
 {% endblock %}
 
 {% block content %}
 
-{{parent()}}
-
+    {{parent()}}
+    <br>
     <div class="users">
-        <table class="UserTable">
+        <table class="table table-striped">
             <tr>
                 <th class="cell">  ID  </th>
                 <th class="cell">  First name  </th>
@@ -34,36 +34,23 @@
             </tr>
             {% endfor %}
         </table>
+    </div>
+    <br><br>
 
+    <div class="box">
+        <p>INSERT SEARCH CRITERION:</p>
+        <form action="/administrator/remove" method="post">
+            <select name="criterion">
+                <option value="ID">ID</option>
+                <option value="Email">Email</option>
+            </select>
+            <br><br>
+            <input type="text" name="field" required>
+            <br><br>
+            <input type="submit" name="" value="DELETE">
+        </form>
     </div>
 
 
-
-<style>
-    table,th,td{
-        border: 1px solid black;
-    }
-
-    tr{
-        cursor: pointer
-    }
-    th {
-        background-color: #000;
-        color: #fff;
-        border: 1px solid #fff !important;
-        cursor: default;
-    }
-    td, th {padding: 5px;
-        border:  1px solid black;
-        white-space: nowrap;
-        vertical-align: text-top;
-        overflow-x: auto;
-        max-width: 250px;
-        max-height: 25px;
-    }
-
-
-
-</style>
 {% endblock %}
 

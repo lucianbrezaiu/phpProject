@@ -13,10 +13,15 @@ use Framework\BaseController;
 
 class PageController extends BaseController
 {
-    public function loadLoginPage()
+    public function loadHomepage() : void
+    {
+        $this->view("home/home.html");
+    }
+
+    public function loadLoginPage() : void
     {
         session_start();
-        $this->view("home.html");
+        $this->view("home/login.html");
         if(isset($_SESSION["message"]))
         {
             $this->alert( $_SESSION["message"]);
@@ -25,7 +30,7 @@ class PageController extends BaseController
         session_destroy();
     }
 
-    public function loadAdminPage()
+    public function loadAdminPage() : void
     {
         if(isset($_SESSION["FirstName"]) && isset($_SESSION["LastName"]))
         {
@@ -38,20 +43,39 @@ class PageController extends BaseController
         }
     }
 
-    public function loadAddAccountPage()
+    public function loadAddAccountPage() : void
     {
         $this->view("administrator/addUser.html");
+        if(isset($_SESSION["message"]))
+        {
+            $this->alert( $_SESSION["message"]);
+            unset( $_SESSION["message"]);
+        }
     }
 
-    public function loadDeleteAccountPage()
+    public function loadDeleteAccountPage() : void
     {
         $user = new User();
         $result = $user->getAll();
         $this->view("administrator/deleteUser.html",["users" => $result]);
+        if(isset($_SESSION["message"]))
+        {
+            $this->alert( $_SESSION["message"]);
+            unset( $_SESSION["message"]);
+        }
     }
 
-    public function loadEmployeePage()
+    public function loadEmployeePage() : void
     {
         $this->view("employeePage.html");
+    }
+
+    /**
+     * Functia incarca un site extern.
+     */
+    public function redirect()
+    {
+        header("Location: /");
+        header("Location: https://new.siemens.com/ro/ro.html");
     }
 }

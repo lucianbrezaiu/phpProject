@@ -1,14 +1,14 @@
 .registerBox{
     width: 400px;
     height: 615px;
-    background: #fb2525;
+    background: cadetblue;
     color: black;
-    top:45%;
+    top:55%;
     left:17%;
     position:absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding: 30px 30px;
+    padding: 10px 25px;
 }
 h1{
     margin: 0;
@@ -37,26 +37,28 @@ h1{
     height: 38px;
     color: black;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     font-family: "Times New Roman";
 }
+
 .registerBox input[type="submit"]{
     border: none;
     outline: black;
     height: 40px;
-    background: #fb2525;
+    background: black;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
 }
 .registerBox input[type="submit"]:hover{
     cursor:pointer;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 }
 .registerBox select{
     color: black;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     font-family: "Times New Roman";
+    width: 100%;
 }

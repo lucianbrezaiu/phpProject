@@ -1,0 +1,80 @@
+.table{
+    background: black;
+}
+
+tr{
+    cursor: pointer;
+    color: white;
+}
+th {
+    background-color: #000;
+    color: white;
+    border: 1px solid #fff !important;
+    cursor: default;
+}
+
+.box{
+    width: 400px;
+    height: 240px;
+    background: lightseagreen;
+    color: black;
+    top:70%;
+    left:17%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 10px 25px;
+}
+
+p{
+    margin: 0;
+    padding: 0 0 15px;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+
+form select{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Times New Roman";
+    width: 100%;
+    text-align: center;
+}
+
+form input[type="text"]{
+    border:none;
+    background: white;
+    outline: none;
+    height: 38px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: "Times New Roman";
+    width: 100%;
+    text-align: center;
+}
+
+form input[type="submit"]{
+    border: none;
+    outline: black;
+    height: 40px;
+    background: black;
+    color: #fff;
+    font-size: 18px;
+    glyph-orientation-horizontal: center;
+    width: 60%;
+    left:17%;
+    margin:0 auto;
+    display:block;
+
+}
+
+form input[type="submit"]:hover{
+    cursor:pointer;
+    background: white;
+    color: black;
+
+
+}

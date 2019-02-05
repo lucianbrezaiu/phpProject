@@ -1,14 +1,15 @@
-{% set pageTitle="HOME | SIEMENS" %}
+{% set pageTitle="LOGIN" %}
 
-{% extends "layout.html" %}
+{% extends "home/home.html" %}
 
 {% block head %}
     {{parent()}}
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
 {% endblock %}
 
 {% block content %}
 
+    {{parent()}}
     <div class="loginBox">
         <h1>WELCOME BACK!</h1>
         <form action="/login" method="post">
@@ -21,7 +22,6 @@
             <br><br>
             <input type="submit" name="" value="Login">
         </form>
-
     </div>
 
 {% endblock %}

@@ -6,7 +6,7 @@
 
 {% block head %}
     {{parent()}}
-    <link rel="stylesheet" href="css/administrator2.css">
+    <link rel="stylesheet" type="text/css" href="/css/administrator2.css">
 {% endblock %}
 
 
@@ -14,7 +14,6 @@
     {{parent()}}
 
     <div class="registerBox">
-        <h1>ADD NEW ACCOUNT!</h1>
         <form action="/administrator/register" method="post">
             <p>FIRST NAME:</p>
             <input type="text" name="firstName" placeholder="First name" required>
