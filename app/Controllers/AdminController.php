@@ -26,7 +26,6 @@ class AdminController extends BaseController
             return;
         }
 
-
         $firstName = $_POST["firstName"];
         $lastName = $_POST["lastName"];
         $username = $_POST["userName"];

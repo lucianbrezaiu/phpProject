@@ -30,7 +30,9 @@ class UserController extends BaseController
 
         $user = new User();
         $result = $user->find(["Email" => $email]);
-        if ($result === false) {
+        var_dump($result);
+        //die();
+        if (empty($result)) {
             $_SESSION["message"] = "EMAIL ADDRESS DOESN'T EXIST";
             header("Location: /login");
             return;
